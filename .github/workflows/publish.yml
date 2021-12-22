@@ -32,9 +32,6 @@ jobs:
         env:
           CI: true
 
-      - name: Generate Release Body
-        run: npx extract-changelog-release > RELEASE_BODY.md
-
       - name: Publish to NPM
         run: yarn publish --non-interactive
         env:
