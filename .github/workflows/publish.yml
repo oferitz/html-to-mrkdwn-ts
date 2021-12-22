@@ -36,9 +36,3 @@ jobs:
         run: yarn publish --non-interactive
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Create GitHub Release
-        uses: ncipollo/release-action@v1
-        with:
-          bodyFile: "RELEASE_BODY.md"
-          token: ${{ secrets.RELEASE_TOKEN }}
