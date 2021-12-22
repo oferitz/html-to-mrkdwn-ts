@@ -1,5 +1,3 @@
-[![npm version](https://badge.fury.io/js/html-to-mrkdwn-ts.svg)](https://badge.fury.io/js/ts-patch)
-[![NPM Downloads](https://img.shields.io/npm/dm/html-to-mrkdwn-tskdown.svg?style=flat)](https://npmjs.org/package/html-to-mrkdwn-ts)
 ![Build Status](https://github.com/oferitz/html-to-mrkdwn-ts/workflows/Build%20(CI)/badge.svg)
 
 # html-to-mrkdwn-ts
