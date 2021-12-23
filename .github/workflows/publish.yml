@@ -22,6 +22,10 @@ jobs:
       - name: Install Packages
         run: yarn install --frozen-lockfile
 
+      - name: 👮 prettier check
+        run: |
+          yarn prettier --check "src/**/*.ts"
+
       - name: Build
         run: yarn build
         env:

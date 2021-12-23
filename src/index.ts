@@ -15,4 +15,3 @@ const htmlToMrkdwn = (html: string, options = baseOptions) => {
 }
 
 export default htmlToMrkdwn
-
