@@ -14,6 +14,12 @@ describe('translators', () => {
       image: 'https://foo.bar/baz.jpg',
       text: '*A Title*\n\n<https://foo.bar|baz > '
     })
+    const justLink = `<a href="https://miro.medium.com/max/1400/1\\*mk1-6aYaf\\_Bes1E3Imhc0A.jpeg">baby yoda</a>`
+    const actualJustLink = htmlToMrkdwn(justLink)
+    expect(actualJustLink).toEqual({
+      image: '',
+      text: '<https://miro.medium.com/max/1400/1\\%2Amk1-6aYaf\\%5FBes1E3Imhc0A.jpeg|baby yoda>'
+    })
   })
 
   it('translate links', () => {
