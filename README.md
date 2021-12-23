@@ -24,19 +24,18 @@ const html = `
 </div>`
 
 htmlToMrkdwn(html)
-/*
-{
-  image: 'https://foo.bar/baz.jpg',
-  text: '*A Title*\n\n<https://foo.bar|baz > '
-}
- */
+
+// {
+//   image: 'https://foo.bar/baz.jpg',
+//   text: '*A Title*\n\n<https://foo.bar|baz>'
+// }
 ```
 
 ## Options
 under the hood html-to-mrkdwn-ts uses [node-html-markdown](https://github.com/crosstype/node-html-markdown/blob/master/README.md) 
-so you can pass additional options a s second argument:
+so you can pass an additional options as a second argument:
 ```ts
-htmlToMrkdwn(html, {strongDelimiter: '**'})
+htmlToMrkdwn(html, { strongDelimiter: '**' })
 ```
 
 
