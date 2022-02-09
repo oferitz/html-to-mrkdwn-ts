@@ -3,7 +3,9 @@ import translators from './translators'
 import { findFirstImageSrc } from './utils'
 
 const baseOptions: Partial<NodeHtmlMarkdownOptions> = {
-  strongDelimiter: '*'
+  strongDelimiter: '*',
+  globalEscape:[] as any,
+  lineStartEscape:[] as any
 }
 
 const htmlToMrkdwn = (html: string, options = baseOptions) => {
