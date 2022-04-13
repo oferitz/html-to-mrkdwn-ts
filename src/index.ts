@@ -4,8 +4,8 @@ import { findFirstImageSrc } from './utils'
 
 const baseOptions: Partial<NodeHtmlMarkdownOptions> = {
   strongDelimiter: '*',
-  globalEscape:[] as any,
-  lineStartEscape:[] as any
+  globalEscape: [] as any,
+  lineStartEscape: [] as any
 }
 
 const htmlToMrkdwn = (html: string, options = baseOptions) => {
