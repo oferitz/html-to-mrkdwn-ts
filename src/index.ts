@@ -4,12 +4,12 @@ import { findFirstImageSrc } from './utils'
 
 const baseOptions: Partial<NodeHtmlMarkdownOptions> = {
   strongDelimiter: '*',
-  globalEscape: [] as any,
+  globalEscape: [/[\\`*~\[\]]/gm, '\\$&'],
   lineStartEscape: [] as any
 }
 
 const htmlToMrkdwn = (html: string, options = baseOptions) => {
-  const result = NodeHtmlMarkdown.translate(html, options, translators)
+  const result = NodeHtmlMarkdown.translate(html, { ...baseOptions, ...options }, translators)
   return {
     text: result,
     image: findFirstImageSrc(html)

@@ -60,6 +60,15 @@ const translators: TranslatorConfigObject = {
         }
       }
     }
+  },
+
+  // escape underscores in italic text
+  'em,i': {
+    spaceIfRepeatingChar: true,
+    postprocess: ({ content, options: { emDelimiter } }) => {
+      content = content.replace(/_/g, '\\_')
+      return isWhiteSpaceOnly(content) ? PostProcessResult.RemoveNode : tagSurround(content, emDelimiter)
+    }
   }
 }
 

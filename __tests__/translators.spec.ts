@@ -63,4 +63,23 @@ describe('translators', () => {
       text: '<foo.jpg|foo>'
     })
   })
+
+  it('escapes underscores in italic text', () => {
+    const html = `<div><em>foo_bar</em></div>`
+    const actual = htmlToMrkdwn(html)
+    expect(actual).toEqual({
+      image: '',
+      text: '_foo\\_bar_'
+    })
+  })
+
+  it('preserves underscores in non italic text', () => {
+    const html = `<div><h1>hello_world</h1>foo__bar</div>`
+    const actual = htmlToMrkdwn(html)
+    expect(actual).toEqual({
+      image: '',
+      text: '*hello_world*\n\nfoo__bar'
+    })
+    expect(actual.text).not.toContain('\\_')
+  })
 })
