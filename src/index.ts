@@ -1,19 +1,19 @@
-import { NodeHtmlMarkdown, NodeHtmlMarkdownOptions } from 'node-html-markdown'
-import translators from './translators'
-import { findFirstImageSrc } from './utils'
+import { NodeHtmlMarkdown, NodeHtmlMarkdownOptions } from "node-html-markdown";
+import translators from "./translators";
+import { findFirstImageSrc } from "./utils";
 
 const baseOptions: Partial<NodeHtmlMarkdownOptions> = {
-  strongDelimiter: '*',
+  strongDelimiter: "*",
   globalEscape: [] as any,
-  lineStartEscape: [] as any
-}
+  lineStartEscape: [] as any,
+};
 
 const htmlToMrkdwn = (html: string, options = baseOptions) => {
-  const result = NodeHtmlMarkdown.translate(html, options, translators)
+  const result = NodeHtmlMarkdown.translate(html, options, translators);
   return {
     text: result,
-    image: findFirstImageSrc(html)
-  }
-}
+    image: findFirstImageSrc(html),
+  };
+};
 
-export default htmlToMrkdwn
+export default htmlToMrkdwn;

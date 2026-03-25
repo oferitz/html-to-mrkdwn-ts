@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'bun:test'
 import htmlToMrkdwn from '../src/index'
 
 describe('translators', () => {
@@ -12,7 +13,7 @@ describe('translators', () => {
     const actual = htmlToMrkdwn(html)
     expect(actual).toEqual({
       image: 'https://foo.bar/baz.jpg',
-      text: '*A Title*\n\n<https://foo.bar|baz > '
+      text: '*A Title*\n\n<https://foo.bar|baz >'
     })
     const justLink = `<a href="https://miro.medium.com/max/1400/1\\*mk1-6aYaf\\_Bes1E3Imhc0A.jpeg">baby yoda</a>`
     const actualJustLink = htmlToMrkdwn(justLink)
